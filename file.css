@@ -1,0 +1,203 @@
+.back {
+  background-color: rgb(93, 93, 93);
+  background-image: url("Коридор.png");
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+
+}
+
+@media (min-width: 1200px) {
+  .site-header {
+    text-align: center;
+    height: 200px;
+    padding-top: 0.1%;
+    background-color: rgba(156, 0, 0, 0.503);
+    background-size: cover;
+    color: #ffffff;
+    }
+  .nm {
+    font-size: 55px;
+  }
+  .txt {
+    font-size: 25px;
+    font-family: Raleway; 
+    
+  }
+  .but {
+    font-size: 60px;
+    padding: 2rem 3rem;
+    border-radius: 30px;
+  }
+  .but:active {
+    font-size: 65px;
+  }
+  .lin {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .site-header {
+    text-align: center;
+    height: 200px;
+    padding-top: 0.1%;
+    background-color: rgba(156, 0, 0, 0.503);
+    background-size: cover;
+    color: #ffffff;
+    }
+  .nm {
+    font-size: 50px;
+  }
+  .txt {
+    font-size: 20px;
+    font-family: Raleway; 
+    
+  }
+  .but {
+    font-size: 55px;
+    padding: 1.5rem 2.5rem;
+    border-radius: 30px;
+  }
+  .but:active {
+    font-size: 60px;
+  }
+  .lin {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 915px) and (max-width: 992px) {
+  .site-header {
+    text-align: center;
+    height: 170px;
+    padding-top: 0.1%;
+    background-color: rgba(156, 0, 0, 0.503);
+    background-size: cover;
+    color: #ffffff;
+    }
+  .nm {
+    font-size: 50px;
+  }
+  .txt {
+    font-size: 20px;
+    font-family: Raleway; 
+  }
+  .but {
+    font-size: 50px;
+    padding: 1.5rem 2.5rem;
+    border-radius: 25px;
+  }
+  .but:active {
+    font-size: 55px;
+  }
+  .lin {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 915px) and (min-width: 700px){
+  .site-header {
+    text-align: center;
+    height: 140px;
+    padding-top: 0.1%;
+    background-color: rgba(156, 0, 0, 0.503);
+    background-size: cover;
+    color: #ffffff;
+    }
+  .nm {
+    font-size: 40px;
+  }
+  .txt {
+    font-size: 15px;
+    font-family: Raleway; 
+  }
+  .but {
+    font-size: 45px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+  }
+  .but:active {
+    font-size: 50px;
+  }
+  .lin {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    text-align: center;
+    height: 140px;
+    padding-top: 0.1%;
+    background-color: rgba(156, 0, 0, 0.503);
+    background-size: cover;
+    color: #ffffff;
+    }
+  .nm {
+    font-size: 40px;
+  }
+  .txt {
+    font-size: 10px;
+    font-family: Raleway; 
+  }
+  .but {
+    font-size: 40px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+  }
+  .but:active {
+    font-size: 45px;
+  }
+  .lin {
+    font-size: 20px;
+  }
+}
+
+
+.but:link {
+  display: inline-block;
+  background: #a31616;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: Raleway; 
+}
+.but:visited {
+  display: inline-block;
+  background: #a31616;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: Raleway; 
+}
+.but:hover {
+  display: inline-block;
+  background: #ff0000;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: Raleway; 
+}
+.but:active {
+  display: inline-block;
+  background: #ff0000;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: Raleway; 
+}
+
+.container {
+  margin-top: 100px;
+  text-align: center;
+  font-family: Raleway; 
+}
+
+
+.lin:link {
+  color: #ff0000;
+  font-family: Raleway; 
+
+}
+.lin:visited {
+  color: #a31616;
+}
+.lin:hover { 
+  color: #ffffff;
+}

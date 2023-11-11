@@ -1,0 +1,15 @@
+.back {
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    justify-content: baseline;
+    background-color: rgb(93, 93, 93);
+  }
+  
+  .im {
+    display: flex;
+    position: absolute;
+    width: 10%;
+    left: 5px;
+    top: 5px;
+  }

@@ -1,0 +1,144 @@
+.back {
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    justify-content: baseline;
+
+    background-image: url("Коридорblur.png");
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    background-color: rgb(93, 93, 93);
+    color: white;
+}
+
+.login_box {
+    margin: 5%;
+    padding: 0 80px 45px;
+    background: #808080;
+    position: relative;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+}
+.login_title {
+    padding: 32px 24px 5px;
+    font-family: Raleway; 
+}
+.login_title_text, .login_footer {
+    
+    color: #fff;
+    font-family: Raleway; 
+}
+h2 {
+    font-family: Raleway; 
+}
+.login_body {
+    vertical-align: baseline;
+    padding: 5px 24px;
+    font-family: Raleway; 
+}
+.login_input {
+    border: 2px solid #9f9f9f;
+    border-radius: 10px;
+    width: 100%;
+    line-height: 2.5;
+    font-family: Raleway; 
+    
+}
+
+.but {
+    display: inline-block;
+    background-color: #a31616;
+    color: rgb(255, 255, 255);
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    border-radius: 14px;
+    width: 50%;
+    font-family: Raleway; 
+    
+}
+
+
+.lin {
+    text-decoration: none;
+    color: #a31616;
+    font-family: Raleway; 
+}
+
+
+@media (min-width: 1200px) {
+    .login_title_text, .login_footer {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 40px; 
+    }
+
+    .but {
+        font-size: 30px;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .login_title_text, .login_footer {
+        font-size: 17px;
+    }
+
+    h2 {
+        font-weight: 870;
+        font-size: 37px; 
+    }
+
+    .but {
+        font-size: 28px;
+    }
+  }
+  
+  @media (min-width: 915px) and (max-width: 992px) {
+    .login_title_text, .login_footer {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-weight: 850;
+        font-size: 35px; 
+    }
+
+    .but {
+        font-size: 25px;
+    }
+  }
+  
+  @media (max-width: 915px) and (min-width: 700px){
+    .login_title_text, .login_footer {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-weight: 800;
+        font-size: 25px; 
+    }
+
+    .but {
+        font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .login_title_text, .login_footer {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-weight: 750;
+        font-size: 25px; 
+    }
+
+    .but {
+        font-size: 20px;
+    }
+  }

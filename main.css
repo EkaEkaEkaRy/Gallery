@@ -1,0 +1,125 @@
+.site-header {
+    height: 50px;
+    background-color: rgba(156, 0, 0, 0.503);
+    width: 99%;
+    position: fixed;
+    }
+
+.cir {
+    display: flex;
+    position: absolute;
+    margin-top: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    right: 5px;
+    background-color: rgb(66, 66, 66);
+}
+
+.text{
+    display: none;
+}
+
+.profile {
+    display: flex;
+    position: absolute;
+    width: 250px;
+    background-color: #9e0000;
+    top: 50px;
+    right: 0;
+    border-bottom-left-radius: 25px;
+    height: 300px;
+    justify-self: center;
+}
+
+.tt2 {
+    display: flex;
+    position: absolute;
+    font-size: 25px;
+    margin-top: 1rem;
+    height: 40px;
+    width: 240px;
+    background-color: #7d0000;
+    padding-left: 10px;
+}
+
+.tt3 {
+    display: flex;
+    position: absolute;
+    font-size: 25px;
+    margin-top: 3.7rem;
+    height: 40px;
+    width: 240px;
+    background-color: #7d0000;
+    padding-left: 10px;
+}
+
+.tt4 {
+    display: flex;
+    position: absolute;
+    top: 15rem;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.lin {
+    display: flex;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+}
+
+.im {
+    display: flex;
+    width: 900px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #9e000049;
+    padding: 10px;
+}
+
+audio {
+    margin-top: 10px;
+    /*текст в аудио: https://www.narakeet.com/app/text-to-audio/?projectId=2b1e9321-bc33-42c7-9089-fa139be65329*/
+}
+
+.star { 
+    font-size: 50px;
+    width: 50px; 
+    margin-left: 100px;
+}
+
+@media (min-width: 992px) {
+    .im {
+        width: 900px;
+  }
+
+  img {
+    width: 600px;
+  }
+}
+  
+@media (min-width: 700px) and (max-width: 992px) {
+    .im {
+        width: 700px;
+  }
+  img {
+    width: 400px;
+  }
+}
+  
+@media (max-width: 700px) {
+    .im {
+        width: 500px;
+  }
+  img {
+    width: 300px;
+  }
+}
