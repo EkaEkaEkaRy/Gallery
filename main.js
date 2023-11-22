@@ -27,3 +27,10 @@ function clik(el){
  };
 
 let count = 0;
+
+
+ function Play(id){
+    const aud = document.getElementById("ms" + id[id.length - 1])
+    if (aud.paused) aud.play()
+    else aud.pause()
+}

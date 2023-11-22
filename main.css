@@ -87,13 +87,14 @@
 
 audio {
     margin-top: 10px;
+    display: none;
     /*текст в аудио: https://www.narakeet.com/app/text-to-audio/?projectId=2b1e9321-bc33-42c7-9089-fa139be65329*/
 }
 
 .star { 
     font-size: 50px;
     width: 50px; 
-    margin-left: 100px;
+    margin-left: 300px;
 }
 
 @media (min-width: 992px) {
