@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link href="../main.css" rel="stylesheet" type="text/css">
+        <script>
+            function show_profile(){
+                if (count == 0) {
+                    let el, s;
+                    el=document.getElementById("add_el");
+                    s=el.innerHTML;
+                    s=s+`<div class = "profile text">
+                        <div class="tt2"><a class="lin" href="/main/favorites/">Избранное</a></div>
+                        <div class="tt3"><a class="lin" href="/main/add/">Добавить идею</a></div>
+                        <div class="tt4"><a class="lin" href="/">Выйти</a></div>
+                    </div>`;
+                    el.innerHTML=s;
+                    count = 1;
+                }
+                else {
+                    let el, s;
+                    el=document.getElementById("add_el");
+                    s=el.innerHTML;
+                    s='';
+                    el.innerHTML=s;
+                    count = 0;
+                }
+                
+            };
+
+            function clik(el){
+                el.parentNode.removeChild(el);
+            };
+
+            let count = 0;
+
+
+            function Play(id){
+                const aud = document.getElementById("ms" + id[id.length - 1])
+                if (aud.paused) aud.play()
+                else aud.pause()
+            }
+        </script>
+    </head>
+    
+    <body style="background-color: rgb(93, 93, 93);">
+        <header class="site-header">
+            <div class="cir" onclick="show_profile()"><img src="../account.png" width="40px"></div>
+            <div id="add_el"></div>
+            
+        </header>
+        
+        <div class="im" id="image1" onclick="Play(id)">
+            <img src="../1.png">
+            <div>Рисунок пациента с вялопротекающей шизофренией.</div>
+            <audio controls src="../1.mp3" id="ms1"></audio>
+            <img class="star" src="../star.png" id="st1">
+        </div>
+        
+        <div class="im" id="image2" onclick="Play(id)">
+            <img src="../2.png">
+            <div>Разнообразие настроений является наглядным примером того, в каком смятении может пребывать больной шизофренией.</div>
+            <audio controls src="../2.mp3" id="ms2"></audio>
+            <img class="star" src="../star.png" id="st2">
+        </div>
+
+        <div class="im" id="image3" onclick="Play(id)">
+            <img src="../3.jpg">
+            <div>Этот рисунок был найден в старой психиатрической больнице.</div>
+            <audio controls src="../3.mp3" id="ms3"></audio>
+            <img class="star" src="../star.png" id="st3">
+        </div>
+
+        <div class="im" id="image4" onclick="Play(id)">
+            <img src="../4.png">
+            <div>Рисунок женщины со смешанным расстройством личности.</div>
+            <audio controls src="../4.mp3" id="ms4"></audio>
+            <img class="star" src="../star.png" id="st4">
+        </div>
+
+    </body>
+    
+</html>

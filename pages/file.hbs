@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link href="../file.css" rel="stylesheet" type="text/css">
+        <script>
+            function Play(){
+                const aud = document.getElementById("ms")
+                if (aud.paused) aud.play()
+                else aud.pause()
+            }
+        </script>
+    </head>
+    <body class="back">
+
+        <header class="site-header">
+            <div onclick="Play()">
+              <h1 class = "nm" style="font-family: 'Comic Sans MS', cursive, sans-serif">ARTPHRENIA</h1>
+              <div class = "txt">На этом сайте собраны рисунки разных авторов, которые видели мир немного по-другому</div>
+              <audio controls src="../start_aud.m4a" id="ms" style='display:none;'></audio>
+            </div>
+        </header>
+        <div class="container"><a class="but" href="/login/">ВОЙТИ</a><div>
+        <div><a class="lin" href="/registration/">Зарегистрироваться</a><div></div>
+    </body>
+    
+</html>

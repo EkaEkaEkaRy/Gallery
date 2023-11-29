@@ -1,0 +1,16 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "StartFile.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test srecified\\\" && exit 1\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.2.0"
+  }
+}
