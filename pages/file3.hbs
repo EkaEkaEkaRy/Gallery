@@ -2,21 +2,6 @@
 <html lang="ru">
     <head>
         <link href="../file3.css" rel="stylesheet" type="text/css">
-        <script>
-          function toMain() {
-            var str1 = document.getElementById("password1").value;
-            var str2 = document.getElementById("password2").value;
-            if (str1 !== str2) {
-            alert("Пароли не совпадают")
-            }
-            else if (isEmpty(str1)) alert("Поле пустое");
-            else return location.href='/login/'
-          }
-          
-          function isEmpty(str){
-            return (str == null) || (str.length == 0);
-          }
-        </script>
     </head>
     <body class="back">
         <div class="sign_up_box">
@@ -24,11 +9,22 @@
               <h2><p>Создать аккаунт</p></h2>
               <p class="sign_up_text">Регистрация через почту</p>
             </div>
-              <p><input class = "sign_up_input" type="email" id="login" placeholder=" Email / Username" /></p>
-              <p><input class = "sign_up_input" type="password" id="password1" placeholder=" Password" /></p>
-              <p><input class = "sign_up_input" type="password" id="password2" placeholder=" Repeat password" /></p>
-              <input class="but" type="submit" value="Зарегистрироваться" onclick="toMain()"/>
+              <form action="adduser" method="post">
+                <p><input class = "sign_up_input" type="name" name="login" placeholder=" Email / Username" /></p>
+                <p><input class = "sign_up_input" type="password" name="password1" placeholder=" Password" /></p>
+                <p><input class = "sign_up_input" type="password" name="password2" placeholder=" Repeat password" /></p>
+                <input class="but" type="submit" value="Зарегистрироваться"/>
+              </form>
             </div>
           </div>
     </body>
 </html>
+
+<!-- 
+  onsubmit="console.log(document.getElementByName('login').value);
+  if ((document.getElementByName('login').value == null) || (document.getElementByName('login').value.length == 0)) alert('Поле пустое');
+  var str1 = document.getElementByName('password1').value; 
+  var str2 = document.getElementByName('password2').value;
+  if (str1 !== str2) alert('Пароли не совпадают');
+  else if ((str1 == null) || (str1.length == 0)) alert('Поле пустое')"
+-->

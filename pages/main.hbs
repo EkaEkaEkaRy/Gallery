@@ -9,8 +9,8 @@
                     el=document.getElementById("add_el");
                     s=el.innerHTML;
                     s=s+`<div class = "profile text">
-                        <div class="tt2"><a class="lin" href="/main/favorites/">Избранное</a></div>
-                        <div class="tt3"><a class="lin" href="/main/add/">Добавить идею</a></div>
+                        <div class="tt2"><a class="lin" href="/main/favorites">Избранное</a></div>
+                        <div class="tt3"><a class="lin" href="/main/add">Добавить идею</a></div>
                         <div class="tt4"><a class="lin" href="/">Выйти</a></div>
                     </div>`;
                     el.innerHTML=s;
@@ -39,6 +39,22 @@
                 if (aud.paused) aud.play()
                 else aud.pause()
             }
+
+            function Is_active(id){
+                console.log(document.getElementById("st" + id[id.length - 1]).src);
+                if (document.getElementById("st" + id[id.length - 1]).src == 'http://localhost:3000/star.png')
+                    document.getElementById("st" + id[id.length - 1]).src = 'http://localhost:3000/act_star.png';
+                else document.getElementById("st" + id[id.length - 1]).src = 'http://localhost:3000/star.png';
+                let im = id[id.length - 1];
+                let el, s;
+                el=document.getElementById("add_fav");
+                s=el.innerHTML;
+                s=s+`<input type="text" name="image" value="` + im + `"/>
+                    <input type="submit" id="button_add_fav"/>`;
+                el.innerHTML=s;
+                document.getElementById("button_add_fav").click();
+
+            }
         </script>
     </head>
     
@@ -53,30 +69,32 @@
             <img src="../1.png">
             <div>Рисунок пациента с вялопротекающей шизофренией.</div>
             <audio controls src="../1.mp3" id="ms1"></audio>
-            <img class="star" src="../star.png" id="st1">
+            <img class="star" src="../star.png" id="st1" onclick="Is_active(id)">
         </div>
         
         <div class="im" id="image2" onclick="Play(id)">
             <img src="../2.png">
             <div>Разнообразие настроений является наглядным примером того, в каком смятении может пребывать больной шизофренией.</div>
             <audio controls src="../2.mp3" id="ms2"></audio>
-            <img class="star" src="../star.png" id="st2">
+            <img class="star" src="../star.png" id="st2" onclick="Is_active(id)">
         </div>
 
         <div class="im" id="image3" onclick="Play(id)">
             <img src="../3.jpg">
             <div>Этот рисунок был найден в старой психиатрической больнице.</div>
             <audio controls src="../3.mp3" id="ms3"></audio>
-            <img class="star" src="../star.png" id="st3">
+            <img class="star" src="../star.png" id="st3" onclick="Is_active(id)">
         </div>
 
         <div class="im" id="image4" onclick="Play(id)">
             <img src="../4.png">
             <div>Рисунок женщины со смешанным расстройством личности.</div>
             <audio controls src="../4.mp3" id="ms4"></audio>
-            <img class="star" src="../star.png" id="st4">
+            <img class="star" src="../star.png" id="st4" onclick="Is_active(id)">
         </div>
 
+
+        <form style="display: none" id="add_fav" action="AddToFavorites" method="post"></form>
     </body>
     
 </html>

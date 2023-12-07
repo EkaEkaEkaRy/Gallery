@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../file2.css" type="text/css"/>
+    <script>
+        Click() {
+            let str1 = document.getElementByName("login").value;
+            let str2 = document.getElementByName("password").value;
+            var profiles = parse(file);
+            if (isEmpty(str1) || isEmpty(str2)) alert("Поле пустое");
+            else if (str1 in profiles) { if (profiles[str1] != str2) alert("Неверный логин или пароль"); } else alert("Неверный логин или пароль");
+        }
+    </script>
   </head>
   <body class= "back">
     <div class="login_box">
@@ -12,17 +21,17 @@
         <p class="login_title_text">Войти через почту</p>
       </div>
       <div class="login_body">
-        <form action="getUser">
+        <form action="getuser" method="post">
             <p>
             <input class = "login_input" type="name" name="login" placeholder=" Email / Username" />
             </p>
             <p><input class = "login_input" type="password" name="password" placeholder=" Password" /></p>
-            <input class="but" id="Login_button" type="submit" value="Войти"/>
+            <input class="but" type="submit" value="Войти" onclick="Click()"/>
         </form>
       </div>
       <div class="login_footer">
         <p>Еще нет аккаунта?</p>
-        <p><a class="lin" href="/registration/">Создать!</a></p>
+        <p><a class="lin" href="/registration">Создать!</a></p>
       </div>
     </div>
   </body>

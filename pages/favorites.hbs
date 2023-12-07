@@ -2,10 +2,28 @@
 <html lang="ru">
     <head>
         <link href="../favorites.css" rel="stylesheet" type="text/css">
+        <script>
+            import mas_images from "../home.js"
+            window.onload = ()=> {
+                let el, s;
+                el=document.getElementById("add_el");
+                s=el.innerHTML;
+                for (i in mas_images)
+                {
+                    s=s+`<div class="im" id="image` + i + `" onclick="Play(id)">
+                            <img src={{"../` + i + `.png"}}>
+                            <audio controls src={{"../` + i + `.mp3"}} id={{"ms` + i + `"}}></audio>
+                            <img class="star" src="../star.png" id="st` + i + `">
+                        </div>`;
+                }
+                el.innerHTML=s;
+            }
+        </script>
     </head>
     
     <body class="back">
-        <a href="/main/"><img class='im' src="../Стрелка.png"></a>
+        <a href="/main"><img class='im' src="../Стрелка.png"></a>
+        <div id="add_el"></div>
     </body>
     
 </html>
