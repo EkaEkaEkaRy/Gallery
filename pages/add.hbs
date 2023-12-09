@@ -2,6 +2,7 @@
 <html lang="ru">
     <head>
         <link href="../add.css" rel="stylesheet" type="text/css">
+        <javascript src="home.js"></javascript>
     </head>
     
     <body class="back">
@@ -11,9 +12,11 @@
             <div class="sign_up_title">
               <h2><p>Добавить картинку</p></h2>
             </div>
+            <form action="addpicture" method="post">
               <p><input class = "sign_up_input" type="file" placeholder="Картинка" name="image"/></p>
               <p><input class = "sign_up_input" type="text" placeholder="Описание" name="description"/></p>
-              <p><a class="but" href="/main">Отправить</a></p>
+              <p><input class="but" type="submit" value="Отправить"></p>
+            </form>
             </div>
         </div>
     </body>

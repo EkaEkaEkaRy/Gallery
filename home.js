@@ -1,7 +1,8 @@
 const fs = require("fs");
+const { cwd } = require("process");
 
 exports.StartFile = function (request, response) {
-    user = "";
+    //user = "";
     response.render("file.hbs");
 };
 
@@ -61,7 +62,12 @@ let user = "";
 
 
 exports.mainGallery = async function (request, response) {
-    if (user != "") response.render("main.hbs");
+    if (user != "") 
+    {
+        let file = fs.readFileSync('favorites.json', 'utf8');
+        const pictures = parse(file);
+        response.render("main.hbs", im = pictures[user]);
+    }
     else response.sendStatus(418);
 };
 
@@ -80,12 +86,36 @@ exports.add = function (request, response) {
     else response.sendStatus(418);
 };
 
-exports.AddToFavorites = async function (request, response) {
-    console.log(3);
+exports.AddToFavorites = function (request, response) {
     let file = fs.readFileSync('favorites.json', 'utf8');
     const pictures = parse(file);
     const im = request.body.image;
-    pictures[user].add(im);
-    fs.writeFileSync('favorites.json', JSON.stringify(pictures));
-    response.redirect("/main");
+    console.log(im);
+    if (pictures[user].indexOf(im) == -1)
+    {
+        pictures[user].push(im);
+        fs.writeFileSync('favorites.json', JSON.stringify(pictures));
+        console.log(1)
+    }
+    else
+    {
+        pictures[user].splice(pictures[user].indexOf(im), 1);
+        fs.writeFileSync('favorites.json', JSON.stringify(pictures));
+        console.log(2)
+    }
+    //response.redirect("/main");
+}
+
+exports.addpicture = function (request, response) {
+    console.log(3);
+    const Name = request.body.image;
+    const Description = request.body.description;
+    let file = fs.readFileSync('send.json', 'utf8');
+    const images = parse(file);
+    if (isEmpty(Name) || isEmpty(Description)) console.log(2);
+    else {
+        images[Name] = Description;
+        fs.writeFileSync('send.json', JSON.stringify(images));
+        response.redirect("/main");
+    }
 }
