@@ -4,13 +4,12 @@
         <link href="../main.css" rel="stylesheet" type="text/css">
         <script>
 
-            function active_star(a)
-            {
-                document.getElementById(a).src = 'http://localhost:3000/act_star.png';
-            }
-
             window.onload = () => {
-                document.getElementById("find_activ").click();
+                for (let i = 0; i < document.querySelectorAll('p').length; i++)
+                {
+                    s=document.querySelectorAll('p')[i].innerHTML;
+                    document.getElementById(s).src = '../act_star.png';
+                }
             }
 
             function show_profile(){
@@ -107,9 +106,10 @@
 
 
         <form style="display: none" id="add_fav" action="AddToFavorites" method="post"></form>
+
+        {{#each stars}}
+            <p style="display: none">{{this.str}}</p>
+        {{/each}}
     </body>
-    {{#each items}}
-        <div id="find_activ" onclick="active_star({{this.str}})"></div>
-    {{/each}}
     
 </html>

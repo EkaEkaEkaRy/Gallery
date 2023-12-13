@@ -77,11 +77,14 @@ exports.mainGallery = async function (request, response) {
             const images = parse(image);
             mas_images.push(images)
         }
-
-        response.render("main.hbs", {items : mas_images});
+        response.render("main.hbs", {stars : mas_images});
     }
     else response.sendStatus(418);
 };
+
+exports.returnToMain = function (request, response) {
+    response.redirect("/main");
+}
 
 exports.favorites = function (request, response) {
     if (user != "") 
@@ -135,4 +138,3 @@ exports.addpicture = function (request, response) {
         response.redirect("/main");
     }
 }
-
