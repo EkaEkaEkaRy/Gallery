@@ -4,13 +4,14 @@
         <link href="../main.css" rel="stylesheet" type="text/css">
         <script>
 
-            /*
-            window.onload = () => {
-                import {im} from "../home.js"
-                for (i in im) document.getElementById("st" + i).src = 'http://localhost:3000/act_star.png';
+            function active_star(a)
+            {
+                document.getElementById(a).src = 'http://localhost:3000/act_star.png';
             }
-            */
-            
+
+            window.onload() {
+                getElementById("find_activ").click();
+            }
 
             function show_profile(){
                 if (count == 0) {
@@ -91,7 +92,7 @@
         </div>
 
         <div class="im" id="image3" onclick="Play(id)">
-            <img src="../3.jpg">
+            <img src="../3.png">
             <div>Этот рисунок был найден в старой психиатрической больнице.</div>
             <audio controls src="../3.mp3" id="ms3"></audio>
             <img class="star" src="../star.png" id="st3" onclick="Is_active(id)">
@@ -107,5 +108,8 @@
 
         <form style="display: none" id="add_fav" action="AddToFavorites" method="post"></form>
     </body>
+    {{#each items}}
+        <div id="find_activ" onclick="active_star({{this.str}})"></div>
+    {{/each}}
     
 </html>

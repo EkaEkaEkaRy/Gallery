@@ -1,5 +1,8 @@
 const fs = require("fs");
 const { cwd } = require("process");
+const notifier = require('node-notifier');
+var jsdom = require("jsdom");
+var JSDOM = jsdom.JSDOM;
 
 exports.StartFile = function (request, response) {
     //user = "";
@@ -21,9 +24,10 @@ exports.getuser = function (request, response) {
     let file = fs.readFileSync('profile.json', 'utf8');
     const profiles = parse(file);
     user = Nikcname;
-    if (isEmpty(Nikcname) || isEmpty(Password)) response.redirect("/login");
+    if (isEmpty(Nikcname) || isEmpty(Password)) notifier.notify({ message: 'Поле пустое'});
     else if (Nikcname in profiles) { if (profiles[Nikcname] == Password) { response.redirect("/main/"); }
-    else response.redirect("/login"); } else response.redirect("/login");
+    else notifier.notify({ message: 'Не верный логин или пароль'}); } 
+    else notifier.notify({message: 'Не верный логин или пароль'});
 }
 
 exports.adduser = function (request, response) {
@@ -34,9 +38,9 @@ exports.adduser = function (request, response) {
     const profiles = parse(file);
     let file2 = fs.readFileSync('favorites.json', 'utf8');
     const images = parse(file2);
-    if (Password1 !== Password2) console.log(1);
-    else if (isEmpty(Password1)) console.log(2);
-    else if (Nikcname in profiles) console.log(3);
+    if (Password1 !== Password2) notifier.notify({message: 'Пароли не совпадают'});
+    else if (isEmpty(Password1) || isEmpty(Password2) || isEmpty(Nikcname)) notifier.notify({message: 'Пустое поле'})
+    else if (Nikcname in profiles) notifier.notify({message: 'Пользователь уже существует'})
     else {
         profiles[Nikcname] = Password1;
         images[Nikcname] = [];
@@ -66,7 +70,15 @@ exports.mainGallery = async function (request, response) {
     {
         let file = fs.readFileSync('favorites.json', 'utf8');
         const pictures = parse(file);
-        response.render("main.hbs", im = pictures[user]);
+
+        let mas_images = []
+        for (i in pictures[user]) {
+            let image = '{ "str" : "st'+ pictures[user][i] + '"}';
+            const images = parse(image);
+            mas_images.push(images)
+        }
+
+        response.render("main.hbs", {items : mas_images});
     }
     else response.sendStatus(418);
 };
@@ -76,7 +88,14 @@ exports.favorites = function (request, response) {
     {
         let file = fs.readFileSync('favorites.json', 'utf8');
         const pictures = parse(file);
-        response.render("favorites.hbs", mas_images = pictures[user]);
+
+        let mas_images = []
+        for (i in pictures[user]) {
+            let image = '{ "pict_id" : "image'+ pictures[user][i] + '", "mus_id" : "ms' + pictures[user][i] + '", "pict" : "../'+ pictures[user][i] + '.png", "mus" : "../' + pictures[user][i] + '.mp3"}';
+            const images = parse(image);
+            mas_images.push(images)
+        }
+        response.render("favorites.hbs", {items : mas_images});
     }
     else response.sendStatus(418);
 };
@@ -95,15 +114,12 @@ exports.AddToFavorites = function (request, response) {
     {
         pictures[user].push(im);
         fs.writeFileSync('favorites.json', JSON.stringify(pictures));
-        console.log(1)
     }
     else
     {
         pictures[user].splice(pictures[user].indexOf(im), 1);
         fs.writeFileSync('favorites.json', JSON.stringify(pictures));
-        console.log(2)
     }
-    //response.redirect("/main");
 }
 
 exports.addpicture = function (request, response) {
@@ -119,3 +135,4 @@ exports.addpicture = function (request, response) {
         response.redirect("/main");
     }
 }
+

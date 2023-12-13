@@ -1,15 +1,62 @@
 .back {
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    justify-content: baseline;
+    
     background-color: rgb(93, 93, 93);
   }
   
-  .im {
+  .strel {
     display: flex;
     position: absolute;
     width: 4%;
     left: 5px;
     top: 5px;
   }
+
+  .im {
+    display: flex;
+    width: 900px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #9e000049;
+    padding: 10px;
+}
+
+audio {
+    margin-top: 10px;
+    display: none;
+    /*текст в аудио: https://www.narakeet.com/app/text-to-audio/?projectId=2b1e9321-bc33-42c7-9089-fa139be65329*/
+}
+
+
+@media (min-width: 992px) {
+    .im {
+        width: 900px;
+  }
+
+  img {
+    width: 600px;
+  }
+}
+  
+@media (min-width: 700px) and (max-width: 992px) {
+    .im {
+        width: 700px;
+  }
+  img {
+    width: 400px;
+  }
+}
+  
+@media (max-width: 700px) {
+    .im {
+        width: 500px;
+  }
+  img {
+    width: 300px;
+  }
+}
