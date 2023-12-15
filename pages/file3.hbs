@@ -2,6 +2,13 @@
 <html lang="ru">
     <head>
         <link href="../file3.css" rel="stylesheet" type="text/css">
+        <script>
+          function Play(a){
+                if (a == 1) document.getElementById("nick").play()
+                if (a == 2) document.getElementById("pasw").play()
+                if (a == 3) document.getElementById("reg").play()
+            }
+        </script>
     </head>
     <body class="back">
         <div class="sign_up_box">
@@ -10,10 +17,13 @@
               <p class="sign_up_text">Регистрация через почту</p>
             </div>
               <form action="adduser" method="post">
-                <p><input class = "sign_up_input" type="name" name="login" placeholder=" Email / Username" /></p>
-                <p><input class = "sign_up_input" type="password" name="password1" placeholder=" Password" /></p>
-                <p><input class = "sign_up_input" type="password" name="password2" placeholder=" Repeat password" /></p>
-                <input class="but" type="submit" value="Зарегистрироваться"/>
+                <p><input class = "sign_up_input" type="name" name="login" placeholder=" Email / Username" onmousemove="Play(1)"/></p>
+                <audio controls src="../Введите никнейм.mp3" id="nick" style='display:none;'></audio>
+                <p><input class = "sign_up_input" type="password" name="password1" placeholder=" Password" onmousemove="Play(2)"/></p>
+                <p><input class = "sign_up_input" type="password" name="password2" placeholder=" Repeat password" onmousemove="Play(2)"/></p>
+                <audio controls src="../Введите пароль.mp3" id="pasw" style='display:none;'></audio>
+                <input class="but" type="submit" value="Зарегистрироваться" onmousemove="Play(3)"/>
+                <audio controls src="../Регистрация.mp3" id="reg" style='display:none;'></audio>
               </form>
             </div>
           </div>

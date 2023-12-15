@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../file2.css" type="text/css"/>
     <script>
-        Click() {
-            let str1 = document.getElementByName("login").value;
-            let str2 = document.getElementByName("password").value;
-            var profiles = parse(file);
-            if (isEmpty(str1) || isEmpty(str2)) alert("Поле пустое");
-            else if (str1 in profiles) { if (profiles[str1] != str2) alert("Неверный логин или пароль"); } else alert("Неверный логин или пароль");
-        }
+        function Play(a){
+                if (a == 1) document.getElementById("nick").play()
+                if (a == 2) document.getElementById("pasw").play()
+                if (a == 3) document.getElementById("login").play()
+                if (a == 4) document.getElementById("reg").play()
+            }
     </script>
   </head>
   <body class= "back">
@@ -23,15 +22,20 @@
       <div class="login_body">
         <form action="getuser" method="post">
             <p>
-            <input class = "login_input" type="name" name="login" placeholder=" Email / Username" />
+            <input class = "login_input" type="name" name="login" placeholder=" Email / Username" onmousemove="Play(1)"/>
+            <audio controls src="../Введите никнейм.mp3" id="nick" style='display:none;'></audio>
             </p>
-            <p><input class = "login_input" type="password" name="password" placeholder=" Password" /></p>
-            <input class="but" type="submit" value="Войти" onclick="Click()"/>
+            <p><input class = "login_input" type="password" name="password" placeholder=" Password" onmousemove="Play(2)"/></p>
+            <audio controls src="../Введите пароль.mp3" id="pasw" style='display:none;'></audio>
+            <input class="but" type="submit" value="Войти" onclick="Click()" onmousemove="Play(3)"/>
+            <audio controls src="../Вход.mp3" id="login" style='display:none;'></audio>
+            
         </form>
       </div>
       <div class="login_footer">
         <p>Еще нет аккаунта?</p>
-        <p><a class="lin" href="/registration">Создать!</a></p>
+        <p><a class="lin" href="/registration" onmousemove="Play(4)">Создать!</a></p>
+        <audio controls src="../Регистрация.mp3" id="reg" style='display:none;'></audio>
       </div>
     </div>
   </body>

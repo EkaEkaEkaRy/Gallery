@@ -1,8 +1,7 @@
 const fs = require("fs");
 const { cwd } = require("process");
 const notifier = require('node-notifier');
-var jsdom = require("jsdom");
-var JSDOM = jsdom.JSDOM;
+
 
 exports.StartFile = function (request, response) {
     //user = "";
@@ -26,8 +25,8 @@ exports.getuser = function (request, response) {
     user = Nikcname;
     if (isEmpty(Nikcname) || isEmpty(Password)) notifier.notify({ message: 'Поле пустое'});
     else if (Nikcname in profiles) { if (profiles[Nikcname] == Password) { response.redirect("/main/"); }
-    else notifier.notify({ message: 'Не верный логин или пароль'}); } 
-    else notifier.notify({message: 'Не верный логин или пароль'});
+    else notifier.notify({ message: 'Неверный логин или пароль'}); } 
+    else notifier.notify({message: 'Неверный логин или пароль'});
 }
 
 exports.adduser = function (request, response) {
@@ -63,7 +62,6 @@ function parse(obj) {
 let user = "";
 
 //////////////////////////////////////////////////////////////////////
-
 
 exports.mainGallery = async function (request, response) {
     if (user != "") 

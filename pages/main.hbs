@@ -18,9 +18,12 @@
                     el=document.getElementById("add_el");
                     s=el.innerHTML;
                     s=s+`<div class = "profile text">
-                        <div class="tt2"><a class="lin" href="/main/favorites">Избранное</a></div>
-                        <div class="tt3"><a class="lin" href="/main/add">Добавить идею</a></div>
-                        <div class="tt4"><a class="lin" href="/">Выйти</a></div>
+                        <div class="tt2" onmousemove="PlayBut(2)"><a class="lin" href="/main/favorites">Избранное</a></div>
+                        <audio controls src="../Избранное.mp3" id="fav" style='display:none;'></audio>
+                        <div class="tt3" onmousemove="PlayBut(3)"><a class="lin" href="/main/add">Добавить идею</a></div>
+                        <audio controls src="../Добавить идею.mp3" id="ad" style='display:none;'></audio>
+                        <div class="tt4" onmousemove="PlayBut(4)"><a class="lin" href="/">Выйти</a></div>
+                        <audio controls src="../Выход.mp3" id="ex" style='display:none;'></audio>
                     </div>`;
                     el.innerHTML=s;
                     count = 1;
@@ -66,12 +69,20 @@
 
             }
 
+            function PlayBut(a){
+                if (a == 1) document.getElementById("icon").play()
+                if (a == 2) document.getElementById("fav").play()
+                if (a == 3) document.getElementById("ad").play()
+                if (a == 4) document.getElementById("ex").play()
+            }
+
         </script>
     </head>
     
     <body style="background-color: rgb(93, 93, 93);">
         <header class="site-header">
-            <div class="cir" onclick="show_profile()"><img src="../account.png" width="40px"></div>
+            <div class="cir" onclick="show_profile()" onmousemove="PlayBut(1)"><img src="../account.png" width="40px"></div>
+            <audio controls src="../Меню.mp3" id="icon" style='display:none;'></audio>
             <div id="add_el"></div>
             
         </header>
@@ -102,6 +113,27 @@
             <div>Рисунок женщины со смешанным расстройством личности.</div>
             <audio controls src="../4.mp3" id="ms4"></audio>
             <img class="star" src="../star.png" id="st4" onclick="Is_active(id)">
+        </div>
+
+        <div class="im" id="image5" onclick="Play(id)">
+            <img src="../5.png">
+            <div>Картина Дэвида Дьюирдта, страдающего шизофренией.</div>
+            <audio controls src="../5.mp3" id="ms5"></audio>
+            <img class="star" src="../star.png" id="st5" onclick="Is_active(id)">
+        </div>
+
+        <div class="im" id="image6" onclick="Play(id)">
+            <img src="../6.png">
+            <div>Картина из музея Овартачи, в котором находятся работы душевнобольных людей.</div>
+            <audio controls src="../6.mp3" id="ms6"></audio>
+            <img class="star" src="../star.png" id="st6" onclick="Is_active(id)">
+        </div>
+
+        <div class="im" id="image7" onclick="Play(id)">
+            <img src="../7.png">
+            <div>Картина Дуна Ридделла.</div>
+            <audio controls src="../7.mp3" id="ms7"></audio>
+            <img class="star" src="../star.png" id="st7" onclick="Is_active(id)">
         </div>
 
 

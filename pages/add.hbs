@@ -2,20 +2,31 @@
 <html lang="ru">
     <head>
         <link href="../add.css" rel="stylesheet" type="text/css">
-        <javascript src="home.js"></javascript>
+        <script>
+            function PlayBut(a){
+                if (a == 1) document.getElementById("ex").play()
+                if (a == 2) document.getElementById("adpic").play()
+                if (a == 3) document.getElementById("addes").play()
+                if (a == 4) document.getElementById("sd").play()
+            }
+        </script>
     </head>
     
     <body class="back">
-        <a href="/main/returnToMain"><img class='im' src="../Стрелка.png"></a>
+        <a href="/main/returnToMain/"><img class='im' src="../Стрелка.png" onmousemove="PlayBut(1)"></a>
+        <audio controls src="../Выход.mp3" id="ex" style='display:none;'></audio>
         
         <div class="sign_up_box">
             <div class="sign_up_title">
               <h2><p>Добавить картинку</p></h2>
             </div>
             <form action="addpicture" method="post">
-              <p><input class = "sign_up_input" type="file" placeholder="Картинка" name="image"/></p>
-              <p><input class = "sign_up_input" type="text" placeholder="Описание" name="description"/></p>
-              <p><input class="but" type="submit" value="Отправить"></p>
+              <p><input class = "sign_up_input" type="file" placeholder="Картинка" name="image" onmousemove="PlayBut(2)"/></p>
+              <audio controls src="../Добавить картину.mp3" id="adpic" style='display:none;'></audio>
+              <p><input class = "sign_up_input" type="text" placeholder="Описание" name="description" onmousemove="PlayBut(3)"/></p>
+              <audio controls src="../Добавить описание.mp3" id="addes" style='display:none;'></audio>
+              <p><input class="but" type="submit" value="Отправить" onmousemove="PlayBut(4)"></p>
+              <audio controls src="../Отправить форму.mp3" id="sd" style='display:none;'></audio>
             </form>
             </div>
         </div>

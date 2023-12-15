@@ -8,19 +8,26 @@
                 if (aud.paused) aud.play()
                 else aud.pause()
             }
+
+            function PlayBut(a){
+                if (a == 1) document.getElementById("login").play()
+                if (a == 2) document.getElementById("reg").play()
+            }
         </script>
     </head>
     <body class="back">
 
         <header class="site-header">
-            <div onclick="Play()">
+            <div onmousemove="Play()">
               <h1 class = "nm" style="font-family: 'Comic Sans MS', cursive, sans-serif">ARTPHRENIA</h1>
               <div class = "txt">На этом сайте собраны рисунки разных авторов, которые видели мир немного по-другому</div>
-              <audio controls src="../start_aud.m4a" id="ms" style='display:none;'></audio>
+              <audio controls src="../start_aud.mp3" id="ms" style='display:none;'></audio>
             </div>
         </header>
-        <div class="container"><a class="but" href="/login">ВОЙТИ</a><div>
-        <div><a class="lin" href="/registration">Зарегистрироваться</a><div></div>
+        <div class="container"><a class="but" href="/login" onmousemove="PlayBut(1)">ВОЙТИ</a><div>
+        <audio controls src="../Вход.mp3" id="login" style='display:none;'></audio>
+        <div><a class="lin" href="/registration" onmousemove="PlayBut(2)">Зарегистрироваться</a><div></div>
+        <audio controls src="../Регистрация.mp3" id="reg" style='display:none;'></audio>
     </body>
     
 </html>

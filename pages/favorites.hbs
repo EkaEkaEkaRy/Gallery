@@ -8,11 +8,16 @@
                 if (aud.paused) aud.play()
                 else aud.pause()
             }
+
+            function PlayBut(a){
+                if (a == 1) document.getElementById("ex").play()
+            }
         </script>
     </head>
     
     <body class="back">
-        <a href="/main/returnToMain"><img class='strel' src="../Стрелка.png"></a>
+        <a href="/main/returnToMain/"><img class='strel' src="../Стрелка.png" onmousemove="PlayBut(1)"></a>
+        <audio controls src="../Выход.mp3" id="ex" style='display:none;'></audio>
         <div id="add_el"></div>
         <div></div>
          {{#each items}}
